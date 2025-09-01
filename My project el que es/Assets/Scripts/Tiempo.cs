@@ -4,11 +4,20 @@ using UnityEngine.SceneManagement;
 
 public class Tiempo : MonoBehaviour
 {
+    public static Tiempo instance;
     [SerializeField] private TMP_Text tiempoTexto;
     [SerializeField] private int minutos;
     [SerializeField] private float segundos;
 
     public bool tiempoAgotado;
+
+    private void Awake()
+    {
+        if (instance == null)
+            instance = this;
+        else
+            Destroy(gameObject);
+    }
 
     private void Start()
     {
@@ -20,7 +29,7 @@ public class Tiempo : MonoBehaviour
         if (tiempoAgotado)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-            return; 
+            return;
         }
 
         segundos -= Time.deltaTime;
@@ -51,5 +60,18 @@ public class Tiempo : MonoBehaviour
     public void Accion()
     {
         tiempoAgotado = true;
+    }
+    
+    public void SumarTiempo(float tiempoExtra)
+    {
+        segundos += tiempoExtra;
+
+        while (segundos >= 60f)
+        {
+            minutos++;
+            segundos -= 60f;
+        }
+
+        ActualizarTiempo();
     }
 }

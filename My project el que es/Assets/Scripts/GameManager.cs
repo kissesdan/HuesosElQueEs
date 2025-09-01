@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
     private int vida = 3;
     public bool tieneLlave = false;
     private bool juegoTerminado = false;
-
+    
     private void Awake()
     {
         if (instance == null)
