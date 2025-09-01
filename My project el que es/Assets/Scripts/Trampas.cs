@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Trampa : MonoBehaviour
+public class Trampas : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {

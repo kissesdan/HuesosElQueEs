@@ -4,7 +4,7 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] private Rigidbody2D _rb2d;
     [SerializeField] private float velocidad = 5f;
-    [SerializeField] private float fuerzaSalto = 5f;
+    [SerializeField] private float fuerzaSalto = 4f;
 
     private bool enSuelo = true;
 
