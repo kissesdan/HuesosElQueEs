@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject obstaculo; // Bloquea la llave
 
     private int puntos = 0;
-    private int vida = 3;
+    private int vida = 4;
     public bool tieneLlave = false;
     private bool juegoTerminado = false;
     
