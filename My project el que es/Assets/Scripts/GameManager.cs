@@ -80,3 +80,7 @@ public class GameManager : MonoBehaviour
         llaveText.text = "Llave: No";
     }
 }
+public void EstadosDelJuego(string estado)
+{
+    switich(estado)
+}
